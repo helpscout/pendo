@@ -32,7 +32,7 @@ Within in, define the sub-packages/sub-apps under `subDirectories`:
 ```json
 {
   "subDirectories": [
-    "./__tests__/site/js/App"
+    "./site/js/sub-app/App"
   ]
 }
 ```
