@@ -1,0 +1,15 @@
+{
+  "name": "SubApp",
+  "dependencies": {
+    "chalk": "2.4.1",
+    "execa": "0.10.0",
+    "listr": "0.14.1",
+    "redent": "2.0.0",
+    "any-observable": "0.2.0",
+    "split": "1.0.1",
+    "stream-to-observable": "0.2.0",
+    "trim-newlines": "2.0.0",
+    "check-dependencies": "1.1.0",
+    "sass-pathfinder": "0.0.3"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "pendo",
+  "private": false,
+  "version": "0.0.1",
+  "description": "Friendly package dependency resolver for mono-apps (and mono-repos)",
+  "main": "index.js",
+  "bin": "cli.js",
+  "scripts": {
+    "release": "np --no-yarn",
+    "test": "echo \"No test specified\" && exit 0"
+  },
+  "author": "Jon Quach <hello@jonquach.com> (https://jonquach.com)",
+  "license": "MIT",
+  "dependencies": {
+    "any-observable": "0.2.0",
+    "chalk": "2.4.1",
+    "check-dependencies": "1.1.0",
+    "listr": "0.14.1",
+    "redent": "2.0.0",
+    "trim-newlines": "2.0.0"
+  },
+  "devDependencies": {
+    "np": "3.0.4",
+    "prettier": "1.13.4"
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/helpscout/pendo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/helpscout/pendo/issues"
+  }
+}
