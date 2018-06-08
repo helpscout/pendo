@@ -58,4 +58,15 @@ When you run the `npm` command that fires Pendo (or if `npm install` autoruns it
 
 Pendo **only** resolves the items found under `dependencies` in your main `package.json` (it ignores `devDependencies`).
 
-Pendo prioritizes dependencies (and their versions) defined in your main `package.json`, but also respects dependencies within your sub-apps' `package.json`.
+Pendo prioritizes dependencies (and their versions) defined in your main `package.json`
+
+By default Pendo will override **all dependencies** specified in your sub-app. To keep your sub-app dependencies, add this option in your `pendo.json`.
+
+```json
+{
+  "subDirectories": [
+    "./__tests__/site/js/App"
+  ],
+  "keepSubDependencies": true
+}
+```
