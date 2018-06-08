@@ -12,31 +12,35 @@ const getSubDependencies = config => {
     const pkgPath = path.join(subPath, 'package.json')
     const pkg = safeGetFile(pkgPath) || {}
 
+    if (!pkg.dependencies) {
+      pkg.dependencies = {}
+    }
+
     return {
       path: subPath,
       pkgPath,
       pkg,
-      dependencies: pkg.dependencies || {},
+      dependencies: pkg.dependencies,
     }
   })
 }
 
-const resolveDependencies = config => {
+const resolveDependencies = (config, callback) => {
   const dependencies = getDependencies(config)
   const subDeps = getSubDependencies(config)
 
-  subDeps.map(sub => {
+  const newSubDeps = subDeps.map(sub => {
     return Object.assign(sub, {
       pkg: Object.assign(sub.pkg, {
-        dependencies: Object.assign(sub.pkg.dependencies, dependencies),
+        dependencies: Object.assign(sub.dependencies, dependencies),
       }),
     })
   })
 
-  config.subDeps = subDeps
+  callback(Object.assign(config, { subDeps: newSubDeps }))
 }
 
-const updateDependencies = config => {
+const updateDependencies = (config) => {
   config.subDeps.forEach(sub => {
     fs.writeFileSync(sub.pkgPath, JSON.stringify(sub.pkg, null, 2))
   })

@@ -54,7 +54,9 @@ const pendo = () => {
     emoji: '📦',
     task: () => {
       return new Promise((resolve, reject) => {
-        resolveDependencies(config)
+        resolveDependencies(config, (newConfig) => {
+          config.subDeps = newConfig.subDeps
+        })
         resolve(prompts.resolveComplete)
       })
     },
@@ -101,7 +103,7 @@ const pendo = () => {
       log(prompts.complete)
       log()
     })
-    .catch(() => process.exit(0))
+    .catch(() => process.exit(1))
 }
 
 module.exports = pendo
