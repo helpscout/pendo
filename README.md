@@ -10,7 +10,7 @@
 ## 🔧 Installation
 
 ```
-npm install --save-dev @helpscout/pendo
+npm install --save-dev pendo
 ```
 
 
