@@ -1,6 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 const checkDependencies = require('check-dependencies')
+const { sortByKey } = require('./utilities/objects')
 const { resolveApp, safeGetFile } = require('./utilities/paths')
 
 const getDependencies = config => config.pkg.dependencies
@@ -30,9 +31,14 @@ const resolveDependencies = (config, callback) => {
   const subDeps = getSubDependencies(config)
 
   const newSubDeps = subDeps.map(sub => {
+    const newDependencies = config.pendo.keepSubDependencies ?
+      sortByKey(Object.assign(sub.dependencies, dependencies))
+      :
+      dependencies
+
     return Object.assign(sub, {
       pkg: Object.assign(sub.pkg, {
-        dependencies: Object.assign(sub.dependencies, dependencies),
+        dependencies: newDependencies
       }),
     })
   })

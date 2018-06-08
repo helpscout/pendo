@@ -6,6 +6,7 @@
   "main": "index.js",
   "bin": "cli.js",
   "scripts": {
+    "pendo": "node cli.js",
     "release": "np --no-yarn",
     "test": "echo \"No test specified\" && exit 0"
   },

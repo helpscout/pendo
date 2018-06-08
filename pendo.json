@@ -1,5 +1,6 @@
 {
   "subDirectories": [
     "./__tests__/site/js/App"
-  ]
+  ],
+  "keepSubDependencies": false
 }
