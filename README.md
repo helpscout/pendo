@@ -1,4 +1,4 @@
-# 🐼 Pendo
+# 🐼 Pendo [![npm version](https://badge.fury.io/js/pendo.svg)](https://badge.fury.io/js/pendo)
 
 > Friendly package dependency resolver for mono-apps (and mono-repos).
 
@@ -32,7 +32,7 @@ Within in, define the sub-packages/sub-apps under `subDirectories`:
 ```json
 {
   "subDirectories": [
-    "./__tests__/site/js/App"
+    "./site/js/sub-app/App"
   ]
 }
 ```
