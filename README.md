@@ -41,7 +41,7 @@ Within in, define the sub-packages/sub-apps under `subDirectories`:
 
 Within your main `package.json`, add a script to fire up Pendo (we recommend adding it to your `postinstall`)
 
-```json
+```
 "scripts": {
   ...
   "postinstall": "pendo"
