@@ -1,7 +1,7 @@
 {
   "name": "pendo",
   "private": false,
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Friendly package dependency resolver for mono-apps (and mono-repos)",
   "main": "index.js",
   "bin": "cli.js",
