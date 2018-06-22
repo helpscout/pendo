@@ -4,6 +4,7 @@
     "any-observable": "0.2.0",
     "chalk": "2.4.1",
     "check-dependencies": "1.1.0",
+    "is-online": "7.0.0",
     "listr": "0.14.1",
     "redent": "2.0.0",
     "trim-newlines": "2.0.0"

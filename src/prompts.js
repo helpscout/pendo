@@ -1,4 +1,5 @@
 const { EMOJI } = require('./constants')
+const { chalk } = require('./utilities/shell')
 
 const withEmoji = message => EMOJI + message
 
@@ -18,5 +19,5 @@ module.exports = {
   install: 'Installing...',
   installComplete: 'Installing complete!',
 
-  complete: withEmoji(`Dependencies resolved! Happy dev'ing ✨`)
+  complete: chalk()
 }
