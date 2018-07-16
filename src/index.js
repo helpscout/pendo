@@ -8,6 +8,7 @@ const fs = require('fs')
 const path = require('path')
 const Listr = require('listr')
 const Observable = require('any-observable')
+const isOnline = require('is-online')
 const { resolveApp, safeGetFile } = require('./utilities/paths')
 const { log, numerate } = require('./utilities/shell')
 const prompts = require('./prompts')
@@ -76,21 +77,28 @@ const pendo = () => {
   taskList.push({
     title: 'Installing',
     emoji: '🚚',
-    task: () => {
-      return new Observable(observer => {
-        observer.next(prompts.install)
-        installDependencies(config, {
-          log: message => {
-            observer.next(message)
-          },
-          error: message => {
-            observer.next(message)
-          },
-        }).then(() => {
-          observer.next(prompts.installComplete)
-          observer.complete()
-        })
+    task: (ctx, task) => {
+      return isOnline().then(online => {
+        if (!online) {
+          task.skip(`Looks like you're offline!`)
+        } else {
+          return new Observable(observer => {
+            observer.next(prompts.install)
+            installDependencies(config, {
+              log: message => {
+                observer.next(message)
+              },
+              error: message => {
+                observer.next(message)
+              },
+            }).then(() => {
+              observer.next(prompts.installComplete)
+              observer.complete()
+            })
+          })
+        }
       })
+
     },
   })
 

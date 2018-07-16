@@ -29,6 +29,7 @@ const numerate = tasks => {
 }
 
 module.exports = {
+  chalk,
   log,
   numerate
 }
