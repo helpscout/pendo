@@ -1,4 +1,4 @@
-# 🐼 Pendo [![npm version](https://badge.fury.io/js/pendo.svg)](https://badge.fury.io/js/pendo)
+# 🐼 Pendo [![Build Status](https://travis-ci.org/helpscout/pendo.svg?branch=master)](https://travis-ci.org/helpscout/pendo) [![npm version](https://badge.fury.io/js/pendo.svg)](https://badge.fury.io/js/pendo)
 
 > Friendly package dependency resolver for mono-apps (and mono-repos).
 
